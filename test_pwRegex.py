@@ -1,6 +1,6 @@
 import unittest
 
-from PythonLibrary import validPassword2
+from PythonRegex import validPassword2
 
 class testPassword(unittest.TestCase):
     

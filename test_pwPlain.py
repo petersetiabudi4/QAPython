@@ -1,6 +1,6 @@
 import unittest
 
-from PythonNonLibrary import validPassword1
+from PythonPlain import validPassword1
 
 class testPassword(unittest.TestCase):
     def testValidPW(self):
