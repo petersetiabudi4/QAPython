@@ -37,7 +37,7 @@ class testPassword(unittest.TestCase):
         result = validPassword2("12345678") # Only Numbers
         self.assertEqual(result, -1)   
         
-        result = validPassword2("HaikalMZG043") # Unnaccepted Special Character
+        result = validPassword2("HaikalMZG04^") # Unnaccepted Special Character
         self.assertEqual(result, -1)   
         
         
