@@ -4,8 +4,12 @@ from PythonLibrary import validPassword2
 
 class testPassword(unittest.TestCase):
     
-    def testValidPW(self):
-        result = validPassword2("Haikalmzg03@") # Valid Password
+    def testValidPW(self): #Valid Passwords
+        result = validPassword2("Haikalmzg03@")
+        self.assertEqual(result, 0)
+        result = validPassword2("HAIKALMZG@")
+        self.assertEqual(result, 0)
+        result = validPassword2("H!MZG123@")
         self.assertEqual(result, 0)
     
     def testLengthPW(self):
@@ -15,26 +19,29 @@ class testPassword(unittest.TestCase):
         result = validPassword2("Haikalllllllllll0!") # Length more than 15
         self.assertEqual(result, -1)
         
-    def testCharacterPW(self):
-        result = validPassword2("haikalmsg03@") # All lower case
+    def testInvalidCharacterPW(self):
+        result = validPassword2("haikalmsg03@") # No Capital Letters
         self.assertEqual(result, -1)
         
-        result = validPassword2("haikalmzg03") # All lower case, no special character
+        result = validPassword2("45545454*") # No Capital Letters
         self.assertEqual(result, -1)
         
-        result = validPassword2("haikalmzg@") # All lower case, no numbers
+        result = validPassword2("hAikalmzg03") # No Special Characters
         self.assertEqual(result, -1)
         
-        result = validPassword2("HAIKALMZG@") # All uppercase
-        self.assertEqual(result, 0)
+        result = validPassword2("haikalmzg03") # No Capital Letters or Special Characters
+        self.assertEqual(result, -1)
         
-        result = validPassword2("12345678Ab") # No special characters
+        result = validPassword2("1234asDAb") # No Special characters
         self.assertEqual(result, -1)
        
-        result = validPassword2("12345678!@") # No Alphabet
+        result = validPassword2("12345678!@") # No Capital Letters
         self.assertEqual(result, -1)      
         
         result = validPassword2("12345678") # Only Numbers
+        self.assertEqual(result, -1) 
+        
+        result = validPassword2("haikalmzg") # Only lowercase letters
         self.assertEqual(result, -1)   
         
         result = validPassword2("HaikalMZG04^") # Unnaccepted Special Character
@@ -43,6 +50,36 @@ class testPassword(unittest.TestCase):
         
     def testSpecialPW(self):
         result = validPassword2("!HaikalMzg03") # Special character in front
+        self.assertEqual(result, -1)
+        
+        result = validPassword2("$HaikalMzg03") # Special character in front
+        self.assertEqual(result, -1)
+        
+        result = validPassword2("*HaikalMzg03") # Special character in front
+        self.assertEqual(result, -1)
+        
+        result = validPassword2("&HaikalMzg03") # Special character in front
+        self.assertEqual(result, -1)
+        
+        result = validPassword2("@HaikalMzg03") # Special character in front
+        self.assertEqual(result, -1)
+        
+        result = validPassword2("#HaikalMzg03") # Special character in front
+        self.assertEqual(result, -1)
+        
+        result = validPassword2("+HaikalMzg03") # Special character in front
+        self.assertEqual(result, -1)
+        
+        result = validPassword2("=HaikalMzg03") # Special character in front
+        self.assertEqual(result, -1)
+        
+        result = validPassword2(")HaikalMzg03") # Special character in front
+        self.assertEqual(result, -1)
+        
+        result = validPassword2("/HaikalMzg03") # Special character in front
+        self.assertEqual(result, -1)
+        
+        result = validPassword2("(HaikalMzg03") # Special character in front
         self.assertEqual(result, -1)
     
 if __name__ == '__main__':
