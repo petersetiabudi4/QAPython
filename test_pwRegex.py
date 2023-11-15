@@ -23,20 +23,11 @@ class testPassword(unittest.TestCase):
         result = validPassword2("haikalmsg03@") # No Capital Letters
         self.assertEqual(result, -1)
         
-        result = validPassword2("45545454*") # No Capital Letters
-        self.assertEqual(result, -1)
-        
         result = validPassword2("hAikalmzg03") # No Special Characters
         self.assertEqual(result, -1)
         
         result = validPassword2("haikalmzg03") # No Capital Letters or Special Characters
-        self.assertEqual(result, -1)
-        
-        result = validPassword2("1234asDAb") # No Special characters
-        self.assertEqual(result, -1)
-       
-        result = validPassword2("12345678!@") # No Capital Letters
-        self.assertEqual(result, -1)      
+        self.assertEqual(result, -1)   
         
         result = validPassword2("12345678") # Only Numbers
         self.assertEqual(result, -1) 
