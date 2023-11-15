@@ -18,6 +18,7 @@ class testPassword(unittest.TestCase):
         self.assertFalse(validPassword1("12345434Ab")) # only numbers
         self.assertFalse(validPassword1("12345434")) # only numbers
         self.assertFalse(validPassword1("47563743!")) # no alphabetical characters
+        self.assertFalse(validPassword1("PeterJohan04)")) # Unaccepted Special Character
         
     def testSpecialPW(self):
         self.assertFalse(validPassword1("!Pijo0408")) # Special character in front

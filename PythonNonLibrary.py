@@ -1,7 +1,7 @@
 def validPassword1(s):
     capital_alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     small_alphabets = "abcdefghijklmnopqrstuvwxyz"
-    special_chars = "!$*&@#+=)"
+    special_chars = "!$*&@#+="
     numbers = "0123456789"
 
     l, u, p, n = 0, 0, 0, 0 # l = Length, u = Uppercase, p = special character, n = numbers

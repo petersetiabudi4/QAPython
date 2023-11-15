@@ -35,7 +35,10 @@ class testPassword(unittest.TestCase):
         self.assertEqual(result, -1)      
         
         result = validPassword2("12345678") # Only Numbers
-        self.assertEqual(result, -1)      
+        self.assertEqual(result, -1)   
+        
+        result = validPassword2("HaikalMZG043") # Unnaccepted Special Character
+        self.assertEqual(result, -1)   
         
         
     def testSpecialPW(self):
