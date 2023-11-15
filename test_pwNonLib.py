@@ -14,7 +14,8 @@ class testPassword(unittest.TestCase):
         self.assertFalse(validPassword1("peterjohan04@")) # all lower case
         self.assertFalse(validPassword1("peterjohan04")) # all lower case, no special character
         self.assertFalse(validPassword1("peterjohan@")) # all lower case, no numbers
-        self.assertFalse(validPassword1("PETERJOHAN04@")) # all uppercase
+        self.assertTrue(validPassword1("PETERJOHAN04@")) # all uppercase
+        self.assertTrue(validPassword1("PETERJOHAN@")) # all uppercase
         self.assertFalse(validPassword1("12345434Ab")) # only numbers
         self.assertFalse(validPassword1("12345434")) # only numbers
         self.assertFalse(validPassword1("47563743!")) # no alphabetical characters

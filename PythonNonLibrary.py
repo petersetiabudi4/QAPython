@@ -4,7 +4,7 @@ def validPassword1(s):
     special_chars = "!$*&@#+=)/("
     numbers = "0123456789"
 
-    l, u, p, n = 0, 0, 0, 0 # l = Length, u = Uppercase, p = special character, n = numbers
+    l, u, p, n = 0, 0, 0, 0 # l = lowercase, u = Uppercase, p = special character, n = numbers
 
     if 8 <= len(s) <= 15:
         for i in s:
@@ -25,4 +25,5 @@ def validPassword1(s):
                 p += 1
 
     #Compile every aspect with the additional metric that the password doesn't start with special character.
-    return l >= 1 and u >= 1 and p >= 1 and n >= 1 and l + p + u + n == len(s) and not s.startswith(tuple(special_chars))
+    return u >= 1 and p >= 1 and l + p + u + n == len(s) and not any(s.startswith(char) for char in special_chars)
+

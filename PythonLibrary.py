@@ -11,13 +11,7 @@ def validPassword2(password):
         elif re.search(r'[!$*&@#+=)/(]', password) is None: # Password includes special characters
             flag = -1
             break
-        elif re.search(r'\d', password) is None: # Password includes numbers or digits
-            flag = -1
-            break
         elif re.search(r'[A-Z]', password) is None: # Password includes Uppercase letters
-            flag = -1
-            break
-        elif re.search(r'[a-z]', password) is None: # Password includes Lowercase letters
             flag = -1
             break
         elif re.search(r'^[!$*&@#+=)/(]', password): # Password doesn't start with special characters

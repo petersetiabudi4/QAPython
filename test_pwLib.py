@@ -25,8 +25,8 @@ class testPassword(unittest.TestCase):
         result = validPassword2("haikalmzg@") # All lower case, no numbers
         self.assertEqual(result, -1)
         
-        result = validPassword2("HAIKALMZG03@") # All uppercase
-        self.assertEqual(result, -1)
+        result = validPassword2("HAIKALMZG@") # All uppercase
+        self.assertEqual(result, 0)
         
         result = validPassword2("12345678Ab") # No special characters
         self.assertEqual(result, -1)
